@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About Us</a></li>
+            <li><a href="contact.html" class="nav-link" target="_blank">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="logo">
+        <a href="file:///C:/Users/deel/my-web-app/app/src/main/webapp/index.html"><img src="veggio2.png.png" alt="Logo"></a>
+    </div>
+    
+    <div class="website-name">
+        VEGGIO
+    </div>
+    
+    <div class="welcome-message">
+        Delicious food delivered to your door in no time!
+    </div>
+
+    <div class="button-container">
+        <button class="button button1">Order Your Food</button>
+        <button class="button button2">Track Your Food</button>
+        <button class="button button3">Suggestions and Ratings</button>
+        <button class="button button4">Ask Your Query</button>
+    </div>
+
+    <div id="dialogueBox" class="dialogue-box hidden">
+        <span class="close-icon" onclick="closeDialogue()">&times;</span>
+        <div id="dialogueContent" class="dialogue-content"></div>
+    </div>
+
+    <div class="logo">
+        <a href="dashboard.html"><img src="veggio2.png.png" alt="Logo"></a> <!-- Link to the same page -->
+    </div>    
+
+    <!-- Profile icon -->
+    <div class="profile-icon">
+        <img src="proficon2.png" alt="Profile Icon" id="profileIcon">
+        <!-- Dropdown box for profile actions -->
+        <div id="profileDropdown" class="dropdown-content hidden">
+            <a href="profile.html">Profile</a>
+            <a href="#settings">Settings</a>
+            <a href="#" id="logoutButton">Logout</a>
+        </div>
+    </div>
+    
+
+    <script src="dialogue.js"></script>
+    <script src="script.js"></script>
+    <script src="dropdown.js"></script>
+    <script src="logout.js"></script>
+
+
+</body>
+</html>
