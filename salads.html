@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salad</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background-image: url('b2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Logo styling */
+        .logo3 {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1001;
+        }
+
+        .logo3 img {
+            width: 105px;   /* Adjust the size of the logo */
+            height: auto;   /* Maintain aspect ratio */
+            cursor: pointer;  /* Cursor changes to pointer when hovering */
+        }
+        .website-name3 {
+            position: absolute;
+            top: 30px; /* This places the website name above the welcome message */
+            left: 230px; /* Align with the welcome message */
+            font-size: 45px; /* Adjust the font size as needed */
+            color: #ffffff; /* Text color */
+            font-weight: bold; /* Bold letters */
+            font-family: 'Cooper Black', cursive; /* Cooper Black font or a similar one */
+            z-index: 2; /* Higher z-index to ensure it's above the background */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); /* Shadow effect */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 900px;
+            padding: 20px; /* Adjust padding around the grid */
+            max-width: 1200px; /* Optional: Set a max width for the container */
+        }
+
+        .grid-item {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 18x;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 280px; /* Set a fixed width */
+            height: 300px; /* Set a fixed height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05); /* Scale the block up slightly */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Enhance the shadow effect on hover */
+        }
+        .food-name {
+            margin-bottom: 10px 0; /* Space below the food name */
+            margin-top: 160px; /* Adjust this value to move the food name downwards */
+            font-size: 23px; /* Optional: Adjust font size */
+            font-weight: 900;
+            color: #000000;
+            font-family: 'Cooper Black', serif; /* Use Cooper Black font */
+        }
+        
+        .food-price {
+            position: absolute;
+            bottom: 10px; /* Space from the bottom of the block */
+            left: 10px; /* Space from the left edge of the block */
+            font-size: 20px; /* Larger font size for the price */
+            font-weight: bold; /* Bold text for emphasis */
+            color: #000000;
+            padding: 5px; /* Optional: Padding to give some space around the text */
+            border-radius: 5px; /* Optional: Rounded corners for the background */
+        }
+
+        /* Image container to control the image position */
+        .food-image-container {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+        }
+        .food-image {
+            width: 100%; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px;
+            object-fit: cover; /* Ensure image fits within the block */
+        }
+        .cart-button2 {
+            position: fixed; /* Stays fixed at the top-right, even when scrolling */
+            bottom: 648px; 
+            left: 1340px; 
+            padding: 10px;
+            border-radius: 50%; /* Round button shape */
+            cursor: pointer;
+            z-index: 1000; /* Ensure it's on top of other elements */
+            transition: transform 0.3s ease; /* Smooth transition effect */
+            
+        }
+        .cart-icon2 {
+            width: 30px; /* Adjust the size of the cart icon */
+            height: 30px;
+            display: block;
+        }
+        
+        .cart-button2:hover {
+            transform: scale(1.2); /* Slightly enlarge the button */
+        }
+        /* Badge styling */
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #45a049;
+            color: #FFFFFF;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+     <!-- The logo properly inside its div -->
+    <div class="logo3">
+        <a href="file:///C:/Users/deel/my-web-app/app/src/main/webapp/appetizers.html">
+            <img src="veggio2.png.png" alt="Logo">
+        </a>
+    </div>
+
+    <div class="website-name3">
+        VEGGIO
+    </div>
+
+    <div class="search-bar-container">
+        <input type="text" id="searchBar" placeholder="Search..." class="search-bar">
+        <button id="searchButton"><img src="search2.png" alt="Search"></button>
+    </div>
+
+    <div class="cart-button2">
+        <img src="cart4.png" alt="Cart" class="cart-icon2">
+        <span class="cart-count">0</span> <!-- Badge to show item count -->
+    </div>
+    <!-- Profile icon -->
+    <div class="profile-icon">
+        <img src="proficon2.png" alt="Profile Icon" id="profileIcon">
+        <!-- Dropdown box for profile actions -->
+        <div id="profileDropdown" class="dropdown-content hidden">
+            <a href="profile.html">Profile</a>
+            <a href="#settings">Settings</a>
+            <a href="#" id="logoutButton">Logout</a>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        
+        <!-- Blocks will be dynamically populated here -->
+    </div>
+
+    <!-- Popup for item added confirmation -->
+    <div id="popup" class="popup hidden">
+        <p id="popup-message">Item added to cart!</p>
+        <p>Total items: <span id="total-items">0</span></p>
+        <button id="go-to-cart">Go to Cart</button>
+    </div>
+
+    <script src="dropdown.js"></script>
+    <script src="logout.js"></script>
+    <script src="salad.js"></script>
+    
+</body>
+</html>
